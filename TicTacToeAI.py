@@ -1,4 +1,104 @@
-h = 9 * 5
+#TicTacToe
+import random
+import sys
+board = ['-','-','-',
+         '-','-','-',
+         '-','-','-']
+currentPlayer='X'
+winner = None
+gameRunning = True
+win = 0
+def printBoard(board):
+    print(board[0] + '|' + board[1] + '|' + board[2])
+    print(board[3] + '|' + board[4] + '|' + board[5])
+    print(board[6] + '|' + board[7] + '|' + board[8])
+def playerInput(board):
+    inp = int(input('Pick a number from 1 to 9: '))
+    if inp >= 1 and inp <= 9 and board[inp-1]== '-':
+        board[inp-1] = currentPlayer
+    else:
+        print('Something unexpected has happened')
 
-h = 0.1 + 0.1 + 0.1
-print(h)
+def checkHorizontal(board):
+    global winner
+    if board[0] == board[1] == board[2] and board[1] != '-':
+        winner = board[0]
+        return True
+    elif board[3] == board[4] == board[5] and board[4] != '-':
+        winner = board[3]
+        return True
+    elif board[6] == board[7] == board[8] and board[6] != '-':
+        winner = board[6]
+        return True
+def checkColumn(board):
+    global winner
+    if board[0] == board[3] == board[6] and board[6] != '-':
+        winner = board[0]
+        return True
+    elif board[1] == board[4] == board[7] and board[7] != '-':
+        winner = board[7]
+        return True
+    elif board[2] == board[5] == board[8] and board[8] != '-':
+        winner = board[8]
+        return True
+def checkDiag(board):
+    global winner
+    if board[0] == board[4] == board[8] and board[0] != '-':
+        winner = board[0]
+        return True
+    elif board[2] == board[4] == board[6] and board[6] != '-':
+        winner = board[2]
+        return True
+def checkTie(board):
+    global gameRunning, win
+    if '-' not in board and win == 0:
+        
+        gameRunning = False
+
+        print('It is a tie')
+    
+
+                            
+def AImachine(board):
+    global currentPlayer
+
+    if currentPlayer == 'X':
+        currentPlayer = 'O'
+
+        empty = [i for i, spot in enumerate(board) if spot == '-']
+
+        if empty:
+            choice = random.choice(empty)
+            board[choice] = 'O'
+
+        currentPlayer = 'X'  
+        
+def checkWin():
+    global winner, gameRunning, win
+    if  checkHorizontal(board) or checkColumn(board) or checkDiag(board):
+        printBoard(board)
+        print(f'The winner is {winner}')
+    
+        gameRunning = False
+        win = 1
+        
+       
+           
+while gameRunning:
+    printBoard(board)
+
+    playerInput(board)
+    checkWin()
+
+    if not gameRunning:
+        break
+
+    checkTie(board)
+
+    if not gameRunning:
+        break
+
+    AImachine(board)
+    checkWin()
+    checkTie(board)
+
