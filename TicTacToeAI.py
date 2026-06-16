@@ -75,7 +75,81 @@ def AImachine(board):
 
     if currentPlayer == 'X':
         currentPlayer = 'O'
-        if board[4] == '-':
+        if board[0] == 'X' and board[3] == 'X' and board[6] == '-':
+            board[6] = 'O'
+            currentPlayer = 'X'
+        elif board[3] == 'X' and board[6] == 'X' and board[0] == '-':
+            board[0] = 'O'
+            currentPlayer = 'X'
+        elif board[0] == 'X' and board[6] == 'X' and board[3] == '-':
+            board[3] = 'O'
+            currentPlayer = 'X'
+        elif board[1] == 'X' and board[4] == 'X' and board[7] == '-':
+            board[7] = 'O'
+            currentPlayer = 'X'
+        elif board[1] == 'X' and board[7] == 'X' and board[4] == '-':
+            board[4] = 'O'
+            currentPlayer = 'X'
+        elif board[4] == 'X' and board[7] == 'X' and board[1] == '-':
+            board[1] = 'O'
+            currentPlayer = 'X'
+        elif board[2] == 'X' and board[5] == 'X' and board[8] == '-':
+            board[8] = 'O'
+            currentPlayer = 'X'
+        elif board[8] == 'X' and board[5] == 'X' and board[2] == '-':
+            board[2] = 'O'
+            currentPlayer = 'X'
+        elif board[2] == 'X' and board[8] == 'X' and board[5] == '-':
+            board[5] = 'O'
+            
+            currentPlayer = 'X'
+        elif board[0] == 'X' and board[1] == 'X' and board[2] == '-':
+            board[2] = 'O'
+            currentPlayer = 'X'
+        elif board[0] == 'X' and board[2] == 'X' and board[1] == '-':
+            board[1] = 'O'
+            currentPlayer = 'X'
+        elif board[1] == 'X' and board[2] == 'X' and board[0] == '-':
+            board[0] = 'O'
+            currentPlayer = 'X'
+        elif board[3] == 'X' and board[4] == 'X' and board[5] == '-':
+            board[5] = 'O'
+            currentPlayer = 'X'
+        elif board[3] == 'X' and board[5] == 'X' and board[4] == '-':
+            board[4] = 'O'
+            currentPlayer = 'X'
+        elif board[4] == 'X' and board[5] == 'X' and board[3] == '-':
+            board[3] = 'O'
+            currentPlayer = 'X'
+        elif board[6] == 'X' and board[7] == 'X' and board[8] == '-':
+            board[8] = 'O'
+            currentPlayer = 'X'
+        elif board[6] == 'X' and board[8] == 'X' and board[7] == '-':
+            board[7] = 'O'
+            currentPlayer = 'X'
+        elif board[7] == 'X' and board[8] == 'X' and board[6] == '-':
+            board[6] = 'O'
+            currentPlayer = 'X'
+        elif board[0] == 'X' and board[4] == 'X' and board[8] == '-':
+            board[8] = 'O'
+            currentPlayer = 'X'
+        elif board[8] == 'X' and board[4] == 'X' and board[0] == '-':
+            board[0] = 'O'
+            currentPlayer = 'X'
+        elif board[0] == 'X' and board[8] == 'X' and board[4] == '-':
+            board[4] = 'O'
+            currentPlayer = 'X'
+        elif board[2] == 'X' and board[4] == 'X' and board[6] == '-':
+            board[6] = 'O'
+            currentPlayer = 'X'
+        elif board[6] == 'X' and board[4] == 'X' and board[2] == '-':
+            board[2] = 'O'
+            currentPlayer = 'X'
+        elif board[2] == 'X' and board[6] == 'X' and board[4] == '-':
+            board[4] = 'O'
+            currentPlayer = 'X'
+        
+        elif board[4] == '-':
             board[4] = 'O'
             currentPlayer = 'X'
            
