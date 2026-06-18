@@ -17,6 +17,7 @@ def printBoard(board):
     print(board[6] + '|' + board[7] + '|' + board[8])
 #Recieving a player's input
 def playerInput(board):
+    #Checking if player's input is valid
     try:
         inp = int(input('Pick a number from 1 to 9: '))
         if inp >= 1 and inp <= 9 and board[inp-1]== '-':
@@ -64,7 +65,7 @@ def checkTie(board):
         
         gameRunning = False
 
-        print('It is a tie')
+        print('It is a tie.')
     
 
 #Creating a simple bot                            
@@ -75,6 +76,7 @@ def AImachine(board):
 
     if currentPlayer == 'X':
         currentPlayer = 'O'
+        #Checking if it can win
         if board[0] == 'O' and board[3] == 'O' and board[6] == '-':
             board[6] = 'O'
             currentPlayer = 'X'
@@ -222,7 +224,7 @@ def AImachine(board):
         elif board[2] == 'X' and board[6] == 'X' and board[4] == '-':
             board[4] = 'O'
             currentPlayer = 'X'
-        
+        #Using best first moves
         elif board[4] == '-':
             board[4] = 'O'
             currentPlayer = 'X'
@@ -255,7 +257,7 @@ def checkWin():
     global winner, gameRunning, win
     if  checkHorizontal(board) or checkColumn(board) or checkDiag(board):
         printBoard(board)
-        print(f'The winner is {winner}')
+        print(f'The winner is {winner}.')
     
         gameRunning = False
         win = 1
