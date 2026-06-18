@@ -1,4 +1,4 @@
-This code will create a small and simple game called 'Tic Tac Toe'. You can run this code in console by using a command python TicTacToeAI.py.
+This code will create a small and simple game called 'Tic Tac Toe'. You can run this code in console by using the command python TicTacToeAI.py.
 
 You will be an 'X' player. You will be asked to write a number from 1 to 9 that will be transformed to 'X' in a spot with respect to the board. An 'O' player will be a bot that uses a common strategy. The common strategy means
 that it will go through the central number, after that through the corner numbers, and after that through the rest of numbers. It is a very effective srategy; although, the bot is still not impossible to beat.
